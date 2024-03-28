@@ -1,12 +1,13 @@
 import express from 'express';
+import { MainRouter, UsersRouter } from '../routers';
 
 const app = express();
 
 // Middleware
+app.use(express.json());
 
 // Routes
-app.use('/', (req, res) => {
-    res.status(200).send('Welcome to the Express API!');
-})
+app.use('/api/v1/', MainRouter);
+app.use('/api/v1/users', UsersRouter);
 
 export default app;
