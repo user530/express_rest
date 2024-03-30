@@ -8,4 +8,4 @@ const DB_URI = process.env.MONGO_URI || '';
 // Connect to the database
 await connectDb(DB_URI)
 
-app.listen(PORT, () => console.log('Server is up and running!'));
+app.listen(PORT, () => console.log(`Server is up and running on the port ${PORT}!`));

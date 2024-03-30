@@ -2,8 +2,8 @@ import { Request, Response } from 'express';
 import { getAllUsersData } from '../../services/user/users';
 import { CustomError, UserData } from '../../common/types';
 
-export const getAllUsers = (req: Request, res: Response) => {
-    const data = getAllUsersData();
+export const getAllUsers = async (req: Request, res: Response) => {
+    const data = await getAllUsersData();
 
     return res.status(200).json(data);
 }
