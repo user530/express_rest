@@ -1,21 +1,7 @@
 import mongoose, { Model } from 'mongoose';
+import { UserData } from '../common/types';
 
-interface UserContacts {
-    email: string;
-    phone: string;
-}
-
-interface IUser {
-    firstName: string;
-    lastName: string;
-    age: number;
-    position: string;
-    contacts: UserContacts;
-    bio: string;
-    photoUrl: string;
-}
-
-const UserSchema = new mongoose.Schema<IUser, Model<IUser>>({
+const UserSchema = new mongoose.Schema<UserData, Model<UserData>>({
     firstName: {
         type: String,
         required: [true, 'Please, provide users first name!'],
